@@ -1,13 +1,13 @@
 package com.by;
 import java.util.UUID;
 
-public class Neuron {
+public class Neuron implements NeuronFuncInterface{
 
 
     private String id;
     private String name;
 
-    public Neuron(int id, String name) {
+    public Neuron(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
     }
@@ -22,5 +22,15 @@ public class Neuron {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void takeInfo(String info) {
+
+    }
+
+    @Override
+    public TotalInfo giveInfo() {
+        return null;
     }
 }
