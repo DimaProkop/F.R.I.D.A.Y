@@ -13,11 +13,12 @@ public class Main {
         Group group = new Group(159224320, access_token);
 
 
+        group.enableTyping(true);
         group.onSimpleTextMessage(message ->
                 new Message()
                         .from(group)
                         .to(message.authorId())
-                        .text("Greetings. I am interactive assistant F.R.I.D.A.Y.")
+                        .text("I don't understand. Please, repeat.")
                         .send()
         );
 
@@ -26,6 +27,14 @@ public class Main {
                         .from(group)
                         .to(message.authorId())
                         .text(Instant.now().toString())
+                        .send()
+        );
+
+        group.onCommand(new String[]{"hey", "Hello", "hi"}, message ->
+                new Message()
+                        .from(group)
+                        .to(message.authorId())
+                        .text("Greetings. I am interactive assistant F.R.I.D.A.Y.")
                         .send()
         );
 
