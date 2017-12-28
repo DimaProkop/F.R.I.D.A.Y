@@ -4,6 +4,7 @@ public class Layer {
 
     private int number;
     private String name;
+    private Neuron neuron;
 
     public Layer(int number, String name) {
         this.number = number;
@@ -24,5 +25,13 @@ public class Layer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Neuron getNeuron() {
+        return neuron;
+    }
+
+    public void setNeuron(Neuron neuron) {
+        this.neuron = neuron;
     }
 }

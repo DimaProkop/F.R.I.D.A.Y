@@ -14,7 +14,7 @@ public class SettingLayers {
     private final Set<String> identifiers;
 
     //set count layers for network
-    public SettingLayers(int countLayers) {
+    SettingLayers(int countLayers) {
         this.countLayers = countLayers;
         this.rand = new Random();
         this.identifiers = new HashSet<>();
@@ -36,7 +36,7 @@ public class SettingLayers {
         return builder.toString();
     }
 
-    public List<Layer> buildNetwork() {
+    List<Layer> buildNetwork() {
         List<Layer> layers = new ArrayList<>();
         for (int i = 1; i <= this.countLayers; i++) {
             layers.add(new Layer(i, randomIdentifier()));
