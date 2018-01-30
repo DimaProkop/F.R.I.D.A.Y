@@ -12,7 +12,6 @@ public class Main {
     public static void main(String[] args) {
         Group group = new Group(159224320, access_token);
 
-
         group.enableTyping(true);
         group.onSimpleTextMessage(message ->
                 new Message()
@@ -37,7 +36,6 @@ public class Main {
                         .text("Greetings. I am interactive assistant F.R.I.D.A.Y.")
                         .send()
         );
-
 
         group.onVoiceMessage(message ->
                 new Message()
